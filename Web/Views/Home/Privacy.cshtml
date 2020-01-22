@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+}
+
+@using Web.Infrastructures.Authorizations.Extensions;
+@using System.Security.Claims;
+
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to detail your site's privacy policy.</p>
+<h3>RoleClaims: @string.Join(",", User.FindAll(ClaimTypes.Role)?.Select(x => x.Value) ?? new List<string>())</h3>
+<h3>PermissionClaims: @string.Join(",", User.GetPermissions() ?? new List<string>())</h3>
