@@ -25,12 +25,6 @@ namespace Web.Controllers
             return View();
         }
 
-        [HasPermission(PermissionNames.VISIT_PRIVACY)]
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

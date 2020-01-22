@@ -36,9 +36,11 @@ namespace Web
             .AddDefaultUI()
             .AddDefaultTokenProviders();
 
-            services.AddPermissionAuthorization();
+            services.AddPermissionAuthorizationCore()
+                .AddPermissionProvider<CustomPermissionProvider>();
 
-            services.AddNavigation<CustomNavigationProvider>();
+            services.AddNavigationCore()
+                .AddNavigationProvider<CustomNavigationProvider>();
 
             services.AddControllersWithViews();
             services.AddRazorPages();

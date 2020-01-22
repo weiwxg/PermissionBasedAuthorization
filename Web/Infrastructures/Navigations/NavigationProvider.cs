@@ -7,7 +7,7 @@ namespace Web.Infrastructures.Navigations
 {
     public class NavigationProvider : INavigationProvider
     {
-        public INavigationManager Manager { get; }
+        protected INavigationManager Manager { get; }
 
         public NavigationProvider(INavigationManager manager)
         {

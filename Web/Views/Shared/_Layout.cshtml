@@ -1,4 +1,7 @@
 ﻿@using Web.Startups;
+@using Web.Infrastructures.Navigations;
+
+@inject INavigationManager NavigationManager;
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,14 +24,14 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        @if (IsGranted(PermissionNames.VISIT_PRIVACY))
+                        @foreach (var menu in NavigationManager.MainMenu.Items)
                         {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                            </li>
+                            @if (string.IsNullOrEmpty(menu.RequiredPermission) || IsGranted(menu.RequiredPermission))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" href="@menu.Url" target="@menu.Target">@menu.Name</a>
+                                </li>
+                            }
                         }
                     </ul>
                 </div>

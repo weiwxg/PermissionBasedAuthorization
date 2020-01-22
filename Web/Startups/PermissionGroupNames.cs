@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Web.Infrastructures.Navigations
+namespace Web.Startups
 {
-    public interface INavigationProvider
+    public class PermissionGroupNames
     {
-        void Initialize();
+        public const string ROLE = "角色";
     }
 }

@@ -10,28 +10,26 @@ namespace Web.Infrastructures.Navigations.Extensions
 {
     public static class NavigationExtensions
     {
-        public static IServiceCollection AddNavigation(this IServiceCollection services)
+        public static IServiceCollection AddNavigationCore(this IServiceCollection services)
         {
             services.AddSingleton<INavigationManager, NavigationManager>();
             services.AddSingleton<INavigationProvider, NavigationProvider>();
             return services;
         }
 
-        public static IServiceCollection AddNavigation<TNavigationProvider>(this IServiceCollection services) where TNavigationProvider : INavigationProvider
+        public static IServiceCollection AddNavigationProvider<TNavigationProvider>(this IServiceCollection services) where TNavigationProvider : INavigationProvider
         {
-            services.AddSingleton<INavigationManager, NavigationManager>();
             services.AddSingleton(typeof(INavigationProvider), typeof(TNavigationProvider));
             return services;
         }
 
-        public static IServiceCollection AddNavigation(this IServiceCollection services, Type navigationProviderType)
+        public static IServiceCollection AddNavigationProvider(this IServiceCollection services, Type navigationProviderType)
         {
-            services.AddSingleton<INavigationManager, NavigationManager>();
             services.AddSingleton(typeof(INavigationProvider), navigationProviderType);
             return services;
         }
 
-        public static IHost UseNavigation(this IHost host)
+        public static IHost UseNavigationProvider(this IHost host)
         {
             var navigationProvider = host.Services.GetRequiredService<INavigationProvider>();
             navigationProvider.Initialize();

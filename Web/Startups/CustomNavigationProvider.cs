@@ -24,11 +24,11 @@ namespace Web.Startups
                 )
             ).AddItem(
                 new MenuItem(
-                    name: "Privacy",
-                    url: "/Home/Index",
+                    name: "Role",
+                    url: "/Role/Index",
                     icon: null,
                     target: Targets.SELF,
-                    requiredPermission: PermissionNames.VISIT_PRIVACY
+                    requiredPermission: null
                 )
             );
         }

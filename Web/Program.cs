@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Web.Infrastructures.Authorizations.Extensions;
 using Web.Infrastructures.Navigations.Extensions;
 
 namespace Web
@@ -15,7 +16,8 @@ namespace Web
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build()
-                .UseNavigation()
+                .UseNavigationProvider()
+                .UsePermissionProvider()
                 .Run();
         }
 

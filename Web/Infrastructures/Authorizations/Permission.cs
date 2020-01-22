@@ -7,11 +7,19 @@ namespace Web.Infrastructures.Authorizations
 {
     public class Permission
     {
-        public Permission(string name, string displayName = null)
+        public Permission(string group, string name, string displayName = null)
         {
+            if (string.IsNullOrEmpty(group))
+                throw new ArgumentNullException(nameof(group));
+            if (string.IsNullOrEmpty(name))
+                throw new ArgumentNullException(name);
+
+            Group = group;
             Name = name;
             DisplayName = displayName ?? name;
         }
+
+        public string Group { get; set; }
 
         public string Name { get; set; }
 

@@ -1,0 +1,32 @@
+﻿@using Web.Data;
+
+@model IEnumerable<AppRole>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Roles</h1>
+
+<a class="btn btn-primary" asp-controller="Role" asp-action="Create">Create Role</a>
+<hr />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Permissions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var role in Model)
+        {
+            <tr>
+                <td>@role.Id</td>
+                <td>@role.Name</td>
+                <td>@string.Join(",", role.RolePermissions.Select(s => s.Permission.DisplayName))</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
