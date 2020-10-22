@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Web.Data
 {
-    public class AppUser : IdentityUser
+    public class Role : IdentityRole
     {
+        public ICollection<RolePermission> RolePermissions { get; set; } = new List<RolePermission>();
     }
 }

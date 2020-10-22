@@ -20,8 +20,10 @@ namespace Web.Infrastructures.Authorizations.Extensions
 
         public static bool HasPermission(this ClaimsPrincipal principal, string permissionName)
         {
-            if (permissionName == null)
-                throw new ArgumentNullException(nameof(permissionName));
+            if (principal is null)
+            {
+                throw new ArgumentNullException(nameof(principal));
+            }
             var userPermissionNames = principal.GetPermissions();
             return userPermissionNames != null && userPermissionNames.Any(p => p == permissionName);
         }

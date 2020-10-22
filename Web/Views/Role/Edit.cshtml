@@ -1,0 +1,50 @@
+﻿@model Web.Models.Role.RoleViewModel
+
+<h4>@ViewBag.Title</h4>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Save">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="Id" type="hidden" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <h2>权限</h2>
+            <hr />
+            @{int i = 0; }
+            @foreach (var group in Model.Permissions.GroupBy(x => x.Group))
+            {
+                <div class="form-group">
+                    <label class="control-label">&nbsp;</label>
+                    @foreach (var permission in group)
+                    {
+                        <label class="checkbox-inline">
+                            @if (permission.Checked)
+                            {
+                                <input type="checkbox" asp-for="Permissions[i].Checked" checked="checked"> @permission.Name
+                            }
+                            else
+                            {
+                                <input type="checkbox" asp-for="Permissions[i].Checked"> @permission.Name
+                            }
+                            <input type="hidden" asp-for="Permissions[i].Group" />
+                            <input type="hidden" asp-for="Permissions[i].Name" />
+                        </label>
+                        i++;
+                    }
+                </div>
+            }
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

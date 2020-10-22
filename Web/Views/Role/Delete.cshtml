@@ -1,0 +1,12 @@
+﻿@model Web.Data.Role
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Confirm to delete role [@Model.Name] ?</h2>
+
+<form asp-action="DeleteConfirmed" asp-route-id="@Model.Id">
+    <input type="submit" value="Delete" class="btn btn-primary" />
+    <a asp-action="Index">Return to list</a>
+</form>

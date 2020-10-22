@@ -15,7 +15,7 @@ namespace Web.Infrastructures.Authorizations.Extensions
         public static IServiceCollection AddPermissionAuthorizationCore(this IServiceCollection services)
         {
             // 授权核心服务
-            services.AddScoped<IUserClaimsPrincipalFactory<AppUser>, PermissionClaimsProducer>();
+            services.AddScoped<IUserClaimsPrincipalFactory<User>, PermissionClaimsProducer>();
             services.AddSingleton<IAuthorizationHandler, PermissionAuthorizationHandler>();
             services.AddSingleton<IAuthorizationPolicyProvider, AuthorizationPolicyProvider>();
 

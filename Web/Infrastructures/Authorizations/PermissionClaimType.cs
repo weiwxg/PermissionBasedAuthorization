@@ -7,6 +7,6 @@ namespace Web.Infrastructures.Authorizations
 {
     public class PermissionClaimType
     {
-        public const string ClaimType = "Permissions";
+        public const string ClaimType = "EasyAuth-Permission";
     }
 }

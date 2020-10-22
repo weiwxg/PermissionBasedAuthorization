@@ -14,6 +14,24 @@
     <Compile Remove="Migrations\20200121081309_InitialCreate.Designer.cs" />
     <Compile Remove="Migrations\20200121090430_InitialCreate.cs" />
     <Compile Remove="Migrations\20200121090430_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20201021055957_InitPermissionScheme.cs" />
+    <Compile Remove="Migrations\20201021055957_InitPermissionScheme.Designer.cs" />
+    <Compile Remove="Migrations\20201021060032_InitAuthScheme.cs" />
+    <Compile Remove="Migrations\20201021060032_InitAuthScheme.Designer.cs" />
+    <Compile Remove="Migrations\20201022033556_InitEasyAuthScheme.cs" />
+    <Compile Remove="Migrations\20201022033556_InitEasyAuthScheme.Designer.cs" />
+    <Compile Remove="Migrations\20201022034109_InitEasyAuthScheme.cs" />
+    <Compile Remove="Migrations\20201022034109_InitEasyAuthScheme.Designer.cs" />
+    <Compile Remove="Migrations\20201022054755_InitEasyAuthScheme.cs" />
+    <Compile Remove="Migrations\20201022054755_InitEasyAuthScheme.Designer.cs" />
+    <Compile Remove="Migrations\20201022055701_InitEasyAuthScheme.cs" />
+    <Compile Remove="Migrations\20201022055701_InitEasyAuthScheme.Designer.cs" />
+    <Compile Remove="Migrations\20201022055747_InitEasyAuthScheme.cs" />
+    <Compile Remove="Migrations\20201022055747_InitEasyAuthScheme.Designer.cs" />
+    <Compile Remove="Migrations\20201022060023_InitEasyAuthScheme.cs" />
+    <Compile Remove="Migrations\20201022060023_InitEasyAuthScheme.Designer.cs" />
+    <Compile Remove="Migrations\20201022072507_InitEasyAuthScheme.cs" />
+    <Compile Remove="Migrations\20201022072507_InitEasyAuthScheme.Designer.cs" />
   </ItemGroup>
 
 
@@ -25,7 +43,7 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.1" />
     <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="3.1.1" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.0" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
   </ItemGroup>
 
 </Project>

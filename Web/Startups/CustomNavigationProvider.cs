@@ -30,6 +30,14 @@ namespace Web.Startups
                     target: Targets.SELF,
                     requiredPermission: null
                 )
+            ).AddItem(
+                new MenuItem(
+                    name: "Privacy",
+                    url: "/Home/Privacy",
+                    icon: null,
+                    target: Targets.SELF,
+                    requiredPermission: null
+                )
             );
         }
     }
