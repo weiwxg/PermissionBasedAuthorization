@@ -1,17 +1,15 @@
-﻿@model Web.Models.Role.RoleViewModel
+﻿@model Web.Models.User.UserAuthModel
+@{
+    ViewData["Title"] = "Auth";
+}
 
-<h4>@ViewBag.Title</h4>
+<h1>用户授权</h1>
 <hr />
 <div class="row">
     <div class="col-md-6">
-        <form asp-action="Save">
+        <form asp-action="Auth">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input asp-for="Id" type="hidden" />
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
+            <input type="hidden" asp-for="Id" />
             <h2>权限</h2>
             <hr />
             @{int i = 0; }
@@ -21,7 +19,7 @@
                     <label class="control-label">&nbsp;</label>
                     @foreach (var permission in group)
                     {
-                        <label class="checkbox-inline @(permission.Disabled?"disabled":"")">
+                        <label class="checkbox-inline @(permission.Disabled ? "disabled" : "")">
                             <input asp-for="Permissions[i].Checked" disabled="@permission.Disabled" /> @permission.Name
                             <input asp-for="Permissions[i].Disabled" type="hidden" />
                             <input asp-for="Permissions[i].Group" type="hidden" />
@@ -32,7 +30,7 @@
                 </div>
             }
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>
@@ -41,4 +39,3 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
-

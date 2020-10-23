@@ -20,6 +20,7 @@ namespace Web.Infrastructures.Authorizations.Extensions
             services.AddSingleton<IAuthorizationPolicyProvider, AuthorizationPolicyProvider>();
 
             // 权限管理相关服务
+            services.AddSingleton<IPermissionChecker, PermissionChecker>();
             services.AddSingleton<IPermissionManager, PermissionManager>();
             services.AddSingleton<PermissionProvider, PermissionProvider>();
             return services;

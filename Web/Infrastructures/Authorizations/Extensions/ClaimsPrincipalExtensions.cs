@@ -27,5 +27,10 @@ namespace Web.Infrastructures.Authorizations.Extensions
             var userPermissionNames = principal.GetPermissions();
             return userPermissionNames != null && userPermissionNames.Any(p => p == permissionName);
         }
+
+        public static bool IsAdministrator(this ClaimsPrincipal principal)
+        {
+            return principal.IsInRole(Administrator.DefaultRoleName);
+        }
     }
 }

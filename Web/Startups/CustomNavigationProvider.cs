@@ -32,6 +32,14 @@ namespace Web.Startups
                 )
             ).AddItem(
                 new MenuItem(
+                    name: "User",
+                    url: "/User/Index",
+                    icon: null,
+                    target: Targets.SELF,
+                    requiredPermission: null
+                )    
+            ).AddItem(
+                new MenuItem(
                     name: "Privacy",
                     url: "/Home/Privacy",
                     icon: null,

@@ -8,8 +8,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Data;
 using Web.Infrastructures.Authorizations;
+using Web.Models;
 using Web.Models.Role;
-using Web.Startups;
 
 namespace Web.Controllers
 {

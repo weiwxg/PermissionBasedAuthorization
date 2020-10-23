@@ -24,10 +24,4 @@ namespace Web.Models.Role
         public PermissionCheckItem[] Permissions { get; set; }
     }
 
-    public class PermissionCheckItem
-    {
-        public string Group { get; set; }
-        public string Name { get; set; }
-        public bool Checked { get; set; } = false;
-    }
 }

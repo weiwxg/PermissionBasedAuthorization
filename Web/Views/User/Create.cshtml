@@ -1,0 +1,45 @@
+﻿@model Web.Models.User.UserViewModel
+
+@{
+    ViewData["Title"] = "Creat";
+}
+
+<h1>Creat</h1>
+
+<h4>UserViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <h2>角色</h2>
+            <hr />
+            @{int i = 0; }
+            @foreach (var role in Model.Roles)
+            {
+                <div class="form-group">
+                    <label class="control-label">&nbsp;</label>
+                    <label class="checkbox-inline">
+                        <input asp-for="Roles[i].Checked" /> @role.RoleName
+                        <input asp-for="Roles[i].RoleName" type="hidden" />
+                    </label>
+                    @{i++;}
+                </div>
+            }
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

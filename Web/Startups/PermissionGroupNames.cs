@@ -8,5 +8,6 @@ namespace Web.Startups
     public class PermissionGroupNames
     {
         public const string ROLE = "角色";
+        public const string USER = "用户";
     }
 }
